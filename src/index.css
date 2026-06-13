@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Cinzel", "Playfair Display", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #050B18;
+  }
+}
+
+/* Custom text outline / stroke values for the bold typography display */
+.text-outline-white {
+  -webkit-text-stroke: 1.5px #ffffff;
+}
+
+.text-outline-orange {
+  -webkit-text-stroke: 1.5px #FF6B00;
+}
+
+@media (max-width: 640px) {
+  .text-outline-white {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .text-outline-orange {
+    -webkit-text-stroke: 1px #FF6B00;
+  }
+}
+

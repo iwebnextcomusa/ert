@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <!-- Premium Gold & Bronze Metallic Gradients -->
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A059" />
+      <stop offset="40%" stop-color="#F5E2B3" />
+      <stop offset="70%" stop-color="#AD8743" />
+      <stop offset="100%" stop-color="#8F6A2B" />
+    </linearGradient>
+
+    <!-- Deep Midnight Sapphire Navy Fill -->
+    <linearGradient id="favNavy" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B152C" />
+      <stop offset="100%" stop-color="#040814" />
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Deep space rounded plate to ensure high visibility on both dark and light browser tabs -->
+  <rect width="128" height="128" rx="24" fill="#030712" />
+  <rect width="124" height="124" x="2" y="2" rx="22" stroke="url(#favGold)" stroke-width="1.2" opacity="0.3" />
+
+  <!-- 1. The Shield (Centered) -->
+  <g filter="url(#shadow)">
+    <!-- Outer Gold boundary line -->
+    <path
+      d="M 64,22 C 76,20 92,16 104,15 C 106,43 104,71 64,99 C 24,71 22,43 24,15 C 36,16 52,20 64,22 Z"
+      fill="url(#favNavy)"
+      stroke="url(#favGold)"
+      stroke-width="2.5"
+      stroke-linejoin="round"
+    />
+    <!-- Inner Gold boundary line -->
+    <path
+      d="M 64,28 C 74,26 88,22 98,21 C 100,45 98,68 64,91 C 30,68 28,45 30,21 C 40,22 54,26 64,28 Z"
+      fill="url(#favNavy)"
+      stroke="url(#favGold)"
+      stroke-width="1.2"
+      stroke-linejoin="round"
+      opacity="0.8"
+    />
+  </g>
+
+  <!-- 2. Sweeping Corporate Orbit / Highway -->
+  <path
+    d="M 18,63 C 33,72 58,76 78,70 C 97,64 114,50 119,32 L 114,31 C 110,46 95,58 77,63 C 58,68 34,64 21,58 Z"
+    fill="url(#favGold)"
+  />
+
+  <!-- 3. Elegant Luxury Sedan Car -->
+  <g>
+    <!-- Windows framework -->
+    <path
+      d="M 47,47 C 53,39 77,38 89,46 C 93,50 95,53 95,54 L 43,54 Z"
+      fill="#0B1329"
+      stroke="url(#favGold)"
+      stroke-width="1.2"
+    />
+    
+    <!-- Sedan main metal body panels -->
+    <path
+      d="M 31,54 C 38,53 44,51 57,51 L 96,51 C 101,51 106,53 105,57 C 102,59 86,60 66,60 C 44,60 36,59 33,56 Z"
+      fill="url(#favGold)"
+    />
+    <path
+      d="M 29,56 Q 37,52 51,52 L 103,52 C 105,53 106,55 105,57 Q 69,64 29,56 Z"
+      fill="url(#favGold)"
+    />
+
+    <!-- Wheels -->
+    <circle cx="48" cy="62" r="6" fill="#040814" stroke="url(#favGold)" stroke-width="1.5" />
+    <circle cx="48" cy="62" r="2" fill="url(#favGold)" />
+
+    <circle cx="86" cy="62" r="6" fill="#040814" stroke="url(#favGold)" stroke-width="1.5" />
+    <circle cx="86" cy="62" r="2" fill="url(#favGold)" />
+  </g>
+</svg>

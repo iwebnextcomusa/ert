@@ -1,0 +1,6 @@
+{
+  "name": "Epic Ride and Transport",
+  "description": "Premium professional transportation, taxi, limo, and charter bus rentals across Texas with an interactive booking system, 3D experience, and AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
