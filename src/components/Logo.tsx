@@ -6,169 +6,204 @@ interface LogoProps {
   textColor?: string;
 }
 
-export function Logo({ className = "h-11", iconOnly = false, textColor = "text-white" }: LogoProps) {
+export function Logo({ className = "h-12", iconOnly = false, textColor = "text-white" }: LogoProps) {
+  // We use dual themes: beautiful gold/midnight navy for high contrast matching the photo
   return (
-    <div className={`flex items-center space-x-3.5 select-none ${className}`}>
-      {/* Exquisite SVG representation matching the uploaded 'Epic Ride and Transport' prestige shield logo */}
+    <div className={`flex items-center space-x-3 select-none ${className}`}>
+      {/* Exquisite high-fidelity SVG representation matching the uploaded 'Epic Ride and Transport' prestige shield logo */}
       <svg
-        viewBox="0 0 400 320"
+        viewBox="0 0 500 500"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full aspect-[5/4] flex-shrink-0"
+        className="h-full aspect-square flex-shrink-0 filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
       >
         <defs>
-          {/* Majestic Metallic Gold & Bronze Gradients from the corporate asset */}
-          <linearGradient id="shieldGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          {/* Majestic Metallic Gold & Bronze Gradients */}
+          <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#C5A059" />
+            <stop offset="20%" stopColor="#F5E2B3" />
+            <stop offset="40%" stopColor="#D8B26E" />
+            <stop offset="75%" stopColor="#AD8743" />
+            <stop offset="100%" stopColor="#7E5F25" />
+          </linearGradient>
+
+          <linearGradient id="carGold" x1="0%" y1="30%" x2="100%" y2="70%">
+            <stop offset="0%" stopColor="#A88548" />
             <stop offset="30%" stopColor="#F5E2B3" />
+            <stop offset="50%" stopColor="#FFFFFF" />
             <stop offset="70%" stopColor="#AD8743" />
-            <stop offset="100%" stopColor="#8F6A2B" />
+            <stop offset="100%" stopColor="#6C4E1A" />
           </linearGradient>
 
-          <linearGradient id="carGoldGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#9E7B45" />
-            <stop offset="25%" stopColor="#E2CD9C" />
-            <stop offset="50%" stopColor="#F3E5C8" />
-            <stop offset="75%" stopColor="#C19E5E" />
-            <stop offset="100%" stopColor="#856123" />
+          <linearGradient id="highwayGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#7E5F25" />
+            <stop offset="30%" stopColor="#E2CD9C" />
+            <stop offset="70%" stopColor="#F5E2B3" />
+            <stop offset="100%" stopColor="#7E5F25" />
           </linearGradient>
 
-          <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#8F6A2B" opacity="0.3" />
-            <stop offset="40%" stopColor="#D4BF8F" />
-            <stop offset="70%" stopColor="#F6E7C4" />
-            <stop offset="100%" stopColor="#8F6A2B" />
+          {/* Deep Royal Midnight Sapphire Navy for the shield body */}
+          <linearGradient id="prestigeNavy" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#0D1E3D" />
+            <stop offset="100%" stopColor="#040914" />
           </linearGradient>
 
-          {/* Deep Sapphire Midnight Navy Fill for high-contrast elite branding */}
-          <linearGradient id="shieldNavyFill" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#0B152C" />
-            <stop offset="100%" stopColor="#040814" />
-          </linearGradient>
-
-          {/* Luxury drop shadow to separate the shield layers beautifully */}
-          <filter id="logoDepthShadow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="8" stdDeviation="6" floodColor="#000000" floodOpacity="0.6" />
+          <filter id="carDepth" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="8" stdDeviation="4" floodColor="#000000" floodOpacity="0.4" />
           </filter>
         </defs>
 
-        {/* 1. Base Layer: The Prestige Shield */}
-        <g filter="url(#logoDepthShadow)">
-          {/* Outer Gold Boundary Line */}
+        {/* 1. Shield Upper Segment */}
+        <g filter="url(#carDepth)">
+          {/* Outer Shield Bezel - Upper */}
           <path
-            d="M 200,45 C 235,40 280,31 315,28 C 322,110 315,190 200,270 C 85,190 78,110 85,28 C 120,31 165,40 200,45 Z"
-            fill="url(#shieldNavyFill)"
-            stroke="url(#shieldGoldGrad)"
-            strokeWidth="3"
+            d="M 250,90 C 290,83 345,71 390,67 C 397,163 388,235 348,272 L 334,262 C 370,227 377,163 372,83 C 332,87 285,97 250,104 C 215,97 168,87 128,83 C 123,163 130,227 166,262 L 152,272 C 112,235 103,163 110,67 C 155,71 210,83 250,90 Z"
+            fill="url(#prestigeNavy)"
+            stroke="url(#premiumGold)"
+            strokeWidth="3.5"
             strokeLinejoin="round"
           />
-          
-          {/* Inner Gold Parallel Inset Accent (Creating the double gold bezel layout seen in user image) */}
+
+          {/* Inner Shield Accent Bezel - Upper */}
           <path
-            d="M 200,58 C 230,53 270,45 299,42 C 304,112 298,180 200,250 C 102,180 96,112 101,42 C 130,45 170,53 200,58 Z"
-            fill="url(#shieldNavyFill)"
-            stroke="url(#shieldGoldGrad)"
+            d="M 250,105 C 285,99 335,89 375,85 C 381,155 373,220 338,252 L 328,245 C 358,217 364,157 359,97 C 324,101 280,111 250,117 C 220,111 176,101 141,97 C 136,157 142,217 172,245 L 162,252 C 127,220 119,155 125,85 C 165,89 215,99 250,105 Z"
+            fill="url(#prestigeNavy)"
+            stroke="url(#premiumGold)"
             strokeWidth="1.5"
+            opacity="0.8"
+          />
+        </g>
+
+        {/* 2. Sweeping Highway / Corporate Orbit */}
+        <path
+          d="M 90,235 C 145,265 240,277 325,255 C 397,237 458,192 472,137 L 452,132 C 438,177 387,217 320,233 C 245,252 160,242 105,217 Z"
+          fill="url(#highwayGold)"
+        />
+        <path
+          d="M 150,245 C 210,258 290,252 360,222"
+          stroke="url(#premiumGold)"
+          strokeWidth="1.5"
+          opacity="0.6"
+        />
+
+        {/* 3. Luxury Sedan Car (Superimposed in Gold) */}
+        <g filter="url(#carDepth)">
+          {/* Windows / Cavity Background */}
+          <path
+            d="M 197,162 C 215,134 290,133 328,157 Z"
+            fill="#050A15"
+          />
+          {/* Windows Frame and Highlight */}
+          <path
+            d="M 197,162 C 215,134 290,133 328,157 C 340,166 345,178 346,180 L 182,180 Z"
+            fill="#0B1329"
+            stroke="url(#carGold)"
+            strokeWidth="2"
             strokeLinejoin="round"
+          />
+          {/* Pillar divider */}
+          <path d="M 275,135 L 280,180" stroke="url(#carGold)" strokeWidth="2" />
+          <path d="M 230,147 L 232,180" stroke="url(#carGold)" strokeWidth="1.2" opacity="0.7" />
+
+          {/* Luxury Sedan Profile Body Panels */}
+          <path
+            d="M 130,183 C 150,180 175,175 220,175 L 348,175 C 365,175 380,182 378,196 Q 330,208 260,208 C 190,208 150,204 130,191 Z"
+            fill="url(#carGold)"
+            stroke="#050A15"
+            strokeWidth="1"
+          />
+          <path
+            d="M 125,191 Q 155,178 205,179 L 368,179 C 375,183 377,190 373,195 Q 260,218 125,191 Z"
+            fill="url(#carGold)"
+          />
+
+          {/* Front Grille and bumper contour (Left view) */}
+          <path
+            d="M 125,190 C 120,193 118,200 121,205 C 128,212 147,217 170,217 L 190,217 Z"
+            fill="url(#carGold)"
+            stroke="url(#premiumGold)"
+            strokeWidth="1"
+          />
+          <path d="M 130,191 C 136,192 142,195 146,199" stroke="#FFF" strokeWidth="2" strokeLinecap="round" />
+
+          {/* Wheels (Chrome Gold alloy spokes) */}
+          {/* Wheel 1 (Rear) */}
+          <circle cx="188" cy="209" r="19" fill="#040813" stroke="url(#premiumGold)" strokeWidth="3" />
+          <circle cx="188" cy="209" r="14" fill="#121F3E" stroke="url(#premiumGold)" strokeWidth="1" />
+          <circle cx="188" cy="209" r="6" fill="url(#premiumGold)" />
+          <path d="M 188,190 L 188,228 M 169,209 L 207,209" stroke="url(#premiumGold)" strokeWidth="1" opacity="0.7" />
+
+          {/* Wheel 2 (Front) */}
+          <circle cx="318" cy="209" r="19" fill="#040813" stroke="url(#premiumGold)" strokeWidth="3" />
+          <circle cx="318" cy="209" r="14" fill="#121F3E" stroke="url(#premiumGold)" strokeWidth="1" />
+          <circle cx="318" cy="209" r="6" fill="url(#premiumGold)" />
+          <path d="M 318,190 L 318,228 M 299,209 L 337,209" stroke="url(#premiumGold)" strokeWidth="1" opacity="0.7" />
+
+          {/* Ground drop shadow under chassis */}
+          <ellipse cx="255" cy="226" rx="100" ry="5" fill="#000" opacity="0.8" />
+        </g>
+
+        {/* 4. Integrated "EPIC RIDE" & "AND TRANSPORT" Text in Middle Splice of Shield */}
+        <g filter="url(#carDepth)">
+          {/* EPIC RIDE display in high contrast matching the uploaded branding */}
+          <text
+            x="248"
+            y="320"
+            fontFamily="'Cinzel', 'Playfair Display', 'Georgia', serif"
+            fontWeight="900"
+            fontSize="45"
+            letterSpacing="1"
+            fill="url(#premiumGold)"
+            textAnchor="middle"
+          >
+            EPIC RIDE
+          </text>
+
+          {/* Subtitle with spacious kerning */}
+          <text
+            x="250"
+            y="358"
+            fontFamily="'Plus Jakarta Sans', 'Outfit', 'Inter', sans-serif"
+            fontWeight="800"
+            fontSize="18"
+            letterSpacing="6"
+            fill="#FFFFFF"
+            textAnchor="middle"
+          >
+            AND TRANSPORT
+          </text>
+        </g>
+
+        {/* 5. Shield Bottom Pointed V-Apex Segment */}
+        <g filter="url(#carDepth)">
+          {/* Outer Shield Bezel - Bottom */}
+          <path
+            d="M 166,380 C 180,412 205,442 250,470 C 295,442 320,412 334,380 L 320,373 C 308,401 285,427 250,452 C 215,427 192,401 180,373 Z"
+            fill="url(#prestigeNavy)"
+            stroke="url(#premiumGold)"
+            strokeWidth="3.5"
+            strokeLinejoin="round"
+          />
+
+          {/* Inner Shield Bezel - Bottom */}
+          <path
+            d="M 176,380 C 188,406 210,432 250,457 C 290,432 312,406 324,380 L 314,375 C 304,397 284,420 250,442 C 216,420 196,397 186,375 Z"
+            fill="url(#prestigeNavy)"
+            stroke="url(#premiumGold)"
+            strokeWidth="1.5"
             opacity="0.85"
           />
         </g>
 
-        {/* 2. Sweeping Corporate Orbit / Highway (Curve starting low left, sweeping past bottom wheels, circling high-right) */}
+        {/* Centered Golden Crown accent at the very apex */}
         <path
-          d="M 68,162 C 110,185 180,195 240,180 C 295,166 345,130 358,85 L 344,83 C 332,122 288,154 236,167 C 182,180 115,172 75,151 Z"
-          fill="url(#orbitGrad)"
+          d="M 238,55 L 244,65 L 250,53 L 256,65 L 262,55 L 258,70 L 242,70 Z"
+          fill="url(#premiumGold)"
         />
-        <path
-          d="M 120,172 C 165,183 230,178 285,152"
-          stroke="url(#shieldGoldGrad)"
-          strokeWidth="1.5"
-          opacity="0.75"
-        />
-
-        {/* 3. The Grand Luxury Sedan Car (Superimposed onto the shield structure with metallic golden/bronze highlights) */}
-        <g>
-          {/* Dark Windows silhouette group */}
-          <path
-            d="M 152,116 C 170,95 240,94 274,114 Z"
-            fill="#050B18"
-          />
-          {/* Windows gold framework and inner glint */}
-          <path
-            d="M 152,116 C 170,95 240,94 274,114 C 285,123 290,132 291,133 L 140,133 Z"
-            fill="#0B1329"
-            stroke="url(#carGoldGrad)"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          {/* Window Chrome Pillar */}
-          <path
-            d="M 215,96 L 219,132"
-            stroke="url(#carGoldGrad)"
-            strokeWidth="1.8"
-          />
-          {/* Window Reflection Specular Glint */}
-          <path
-            d="M 172,112 C 185,103 198,101 205,104 Z"
-            fill="#FFFFFF"
-            opacity="0.3"
-          />
-
-          {/* Car main metal body panels in rich golds */}
-          <path
-            d="M 103,135 C 122,132 140,128 178,128 L 290,128 C 304,128 316,134 314,146 C 307,152 260,154 200,154 C 135,154 112,151 103,141 C 100,138 101,136 103,135 Z"
-            fill="url(#carGoldGrad)"
-            stroke="#050B18"
-            strokeWidth="0.8"
-          />
-          <path
-            d="M 98,141 Q 120,131 160,132 L 310,132 C 316,135 318,141 315,145 Q 210,165 98,141 Z"
-            fill="url(#carGoldGrad)"
-          />
-
-          {/* Front Bumper & Luxury Mercedes-style Grille Contour on Left */}
-          <path
-            d="M 98,141 C 94,143 92,148 95,152 C 101,158 118,162 138,162 L 155,162 Z"
-            fill="url(#carGoldGrad)"
-            stroke="url(#shieldGoldGrad)"
-            strokeWidth="1"
-          />
-          {/* Front Headlight flare */}
-          <path
-            d="M 102,140 C 107,141 112,143 115,146"
-            stroke="#FFF"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-
-          {/* Rear premium tail taper on Right */}
-          <path
-            d="M 292,130 C 305,130 315,134 318,140 L 314,148 Z"
-            fill="url(#carGoldGrad)"
-          />
-
-          {/* Chrome Alloy Wheels with matching center badges */}
-          {/* Wheel 1 (Rear-Right) */}
-          <circle cx="152" cy="155" r="15" fill="#040814" stroke="url(#shieldGoldGrad)" strokeWidth="2.2" />
-          <circle cx="152" cy="155" r="11" fill="#121D3A" stroke="url(#shieldGoldGrad)" strokeWidth="1" />
-          <circle cx="152" cy="155" r="5" fill="url(#shieldGoldGrad)" />
-          {/* Alloy Spokes */}
-          <path d="M 152,140 L 152,170 M 137,155 L 167,155" stroke="url(#shieldGoldGrad)" strokeWidth="0.8" opacity="0.6" />
-
-          {/* Wheel 2 (Front-Left) */}
-          <circle cx="264" cy="155" r="15" fill="#040814" stroke="url(#shieldGoldGrad)" strokeWidth="2.2" />
-          <circle cx="264" cy="155" r="11" fill="#121D3A" stroke="url(#shieldGoldGrad)" strokeWidth="1" />
-          <circle cx="264" cy="155" r="5" fill="url(#shieldGoldGrad)" />
-          {/* Alloy Spokes */}
-          <path d="M 264,140 L 264,170 M 249,155 L 279,155" stroke="url(#shieldGoldGrad)" strokeWidth="0.8" opacity="0.6" />
-
-          {/* Sleek Under-chassis dark shadow masking */}
-          <ellipse cx="204" cy="169" rx="80" ry="4" fill="#000000" opacity="0.75" />
-        </g>
       </svg>
 
       {!iconOnly && (
-        <div className="flex flex-col justify-center leading-none mt-1">
+        <div className="flex flex-col justify-center leading-none mt-0.5">
           <span className="font-serif text-2xl font-black uppercase tracking-wide text-white leading-none">
             EPIC RIDE
           </span>
@@ -177,8 +212,8 @@ export function Logo({ className = "h-11", iconOnly = false, textColor = "text-w
               AND TRANSPORT
             </span>
           </div>
-          <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-cyan-400/80 font-mono mt-1">
-            TEXAS CHAUFFEURED LUXURY
+          <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-cyan-400/85 font-mono mt-1">
+            TEXAS CERTIFIED
           </span>
         </div>
       )}
@@ -195,3 +230,4 @@ export function LogoIcon({ className = "h-11 w-11" }: { className?: string }) {
     </div>
   );
 }
+

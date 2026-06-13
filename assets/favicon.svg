@@ -3,78 +3,96 @@
     <!-- Premium Gold & Bronze Metallic Gradients -->
     <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#C5A059" />
-      <stop offset="40%" stop-color="#F5E2B3" />
-      <stop offset="70%" stop-color="#AD8743" />
-      <stop offset="100%" stop-color="#8F6A2B" />
+      <stop offset="25%" stop-color="#F5E2B3" />
+      <stop offset="60%" stop-color="#AD8743" />
+      <stop offset="100%" stop-color="#7E5F25" />
     </linearGradient>
 
-    <!-- Deep Midnight Sapphire Navy Fill -->
+    <!-- Deep Royal Midnight Sapphire Navy -->
     <linearGradient id="favNavy" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0B152C" />
-      <stop offset="100%" stop-color="#040814" />
+      <stop offset="0%" stop-color="#0D1E3D" />
+      <stop offset="100%" stop-color="#040914" />
+    </linearGradient>
+
+    <linearGradient id="carGold" x1="0%" y1="30%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#A88548" />
+      <stop offset="50%" stop-color="#F5E2B3" />
+      <stop offset="100%" stop-color="#6C4E1A" />
     </linearGradient>
 
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5" />
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.6" />
     </filter>
   </defs>
 
   <!-- Deep space rounded plate to ensure high visibility on both dark and light browser tabs -->
-  <rect width="128" height="128" rx="24" fill="#030712" />
-  <rect width="124" height="124" x="2" y="2" rx="22" stroke="url(#favGold)" stroke-width="1.2" opacity="0.3" />
+  <rect width="128" height="128" rx="28" fill="#02050E" />
+  <rect width="122" height="122" x="3" y="3" rx="25" stroke="url(#favGold)" stroke-width="1.2" opacity="0.25" />
 
-  <!-- 1. The Shield (Centered) -->
-  <g filter="url(#shadow)">
-    <!-- Outer Gold boundary line -->
+  <!-- 1. Upper Shield Bezel (Centered) -->
+  <g filter="url(#shadow)" opacity="0.95">
     <path
-      d="M 64,22 C 76,20 92,16 104,15 C 106,43 104,71 64,99 C 24,71 22,43 24,15 C 36,16 52,20 64,22 Z"
+      d="M 64,26 C 74,24 88,21 99,20 C 101,44 99,62 89,71 L 85,69 C 94,60 96,44 95,24 C 85,25 73,28 64,29 C 55,28 43,25 33,24 C 32,44 34,60 43,69 L 39,71 C 29,62 27,44 29,20 C 40,21 54,24 64,26 Z"
       fill="url(#favNavy)"
       stroke="url(#favGold)"
-      stroke-width="2.5"
+      stroke-width="1.8"
       stroke-linejoin="round"
-    />
-    <!-- Inner Gold boundary line -->
-    <path
-      d="M 64,28 C 74,26 88,22 98,21 C 100,45 98,68 64,91 C 30,68 28,45 30,21 C 40,22 54,26 64,28 Z"
-      fill="url(#favNavy)"
-      stroke="url(#favGold)"
-      stroke-width="1.2"
-      stroke-linejoin="round"
-      opacity="0.8"
     />
   </g>
 
   <!-- 2. Sweeping Corporate Orbit / Highway -->
   <path
-    d="M 18,63 C 33,72 58,76 78,70 C 97,64 114,50 119,32 L 114,31 C 110,46 95,58 77,63 C 58,68 34,64 21,58 Z"
+    d="M 24,63 C 38,71 62,74 83,69 C 101,64 116,53 120,39 L 115,38 C 111,50 99,60 82,64 C 63,68 41,65 28,58 Z"
     fill="url(#favGold)"
   />
 
-  <!-- 3. Elegant Luxury Sedan Car -->
-  <g>
-    <!-- Windows framework -->
+  <!-- 3. Elegant Luxury Sedan Car inside Upper Shield -->
+  <g filter="url(#shadow)">
+    <!-- Windows -->
     <path
-      d="M 47,47 C 53,39 77,38 89,46 C 93,50 95,53 95,54 L 43,54 Z"
+      d="M 51,44 C 55,37 74,37 83,43 C 86,45 87,48 88,49 L 47,49 Z"
       fill="#0B1329"
-      stroke="url(#favGold)"
-      stroke-width="1.2"
+      stroke="url(#carGold)"
+      stroke-width="1.0"
     />
     
-    <!-- Sedan main metal body panels -->
+    <!-- Sedan profiles -->
     <path
-      d="M 31,54 C 38,53 44,51 57,51 L 96,51 C 101,51 106,53 105,57 C 102,59 86,60 66,60 C 44,60 36,59 33,56 Z"
-      fill="url(#favGold)"
-    />
-    <path
-      d="M 29,56 Q 37,52 51,52 L 103,52 C 105,53 106,55 105,57 Q 69,64 29,56 Z"
-      fill="url(#favGold)"
+      d="M 34,50 Q 42,46 54,46 L 93,46 C 95,47 96,49 95,51 Q 67,57 34,50 Z"
+      fill="url(#carGold)"
     />
 
     <!-- Wheels -->
-    <circle cx="48" cy="62" r="6" fill="#040814" stroke="url(#favGold)" stroke-width="1.5" />
-    <circle cx="48" cy="62" r="2" fill="url(#favGold)" />
-
-    <circle cx="86" cy="62" r="6" fill="#040814" stroke="url(#favGold)" stroke-width="1.5" />
-    <circle cx="86" cy="62" r="2" fill="url(#favGold)" />
+    <circle cx="49" cy="53" r="5" fill="#040813" stroke="url(#favGold)" stroke-width="1.5" />
+    <circle cx="81" cy="53" r="5" fill="#040813" stroke="url(#favGold)" stroke-width="1.5" />
   </g>
+
+  <!-- 4. Gold Crown accent at top apex -->
+  <path
+    d="M 61,17 L 62.5,20 L 64,17 L 65.5,20 L 67,17 L 66,21 L 62,21 Z"
+    fill="url(#favGold)"
+  />
+
+  <!-- 5. Bottom Shield V-bezel (Centered) -->
+  <g filter="url(#shadow)">
+    <path
+      d="M 43,99 C 47,107 53,115 64,122 C 75,115 81,107 85,99 L 81,97 C 78,104 73,111 64,117 C 55,111 50,104 47,97 Z"
+      fill="url(#favNavy)"
+      stroke="url(#favGold)"
+      stroke-width="1.8"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- 6. Bold stylized initials "EPIC" monogram centered in the split gap -->
+  <text
+    x="64"
+    y="88"
+    font-family="'Cinzel', 'Playfair Display', 'Georgia', serif"
+    font-weight="950"
+    font-size="16"
+    letter-spacing="1"
+    fill="url(#favGold)"
+    text-anchor="middle"
+  >E R</text>
 </svg>
