@@ -154,11 +154,24 @@ export default function HomeSection({ setActiveTab, onOpenBooking }: HomeSection
   return (
     <div id="epic-ride-home-view" className="relative text-white">
       {/* 1. Hero Section */}
-      <section className="relative flex min-h-[90vh] flex-col justify-center px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-b from-[#050B18] via-slate-950 to-[#050B18] overflow-hidden">
+      <section className="relative flex min-h-[90vh] flex-col justify-center px-4 py-16 sm:px-6 lg:px-8 bg-[#050B18] overflow-hidden">
         
+        {/* Full-screen ambient transport business backdrop matching modern executive service */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img
+            src="/src/assets/images/hero_luxury_vehicle_1781390767494.jpg"
+            alt="Texas Certified Transport Backdrop"
+            className="w-full h-full object-cover opacity-[0.42] filter brightness-[0.65] contrast-[1.1] scale-102 transition-all duration-700"
+            referrerPolicy="no-referrer"
+          />
+          {/* Multi-layered premium vignetting & dark masking to keep text contrast flawless */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-slate-950/45 to-[#050B18]" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/30 to-[#050B18]/95" />
+        </div>
+
         {/* Subtle glow elements */}
-        <div className="absolute top-[20%] left-[10%] h-72 w-72 rounded-full bg-[#FF6B00]/3 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[20%] right-[10%] h-80 w-80 rounded-full bg-blue-500/3 blur-3xl pointer-events-none" />
+        <div className="absolute top-[20%] left-[10%] h-72 w-72 rounded-full bg-[#FF6B00]/4 blur-3xl pointer-events-none z-0" />
+        <div className="absolute bottom-[20%] right-[10%] h-80 w-80 rounded-full bg-blue-500/4 blur-3xl pointer-events-none z-0" />
 
         <div className="mx-auto max-w-7xl relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
